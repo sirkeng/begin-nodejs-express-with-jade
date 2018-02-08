@@ -1,0 +1,23 @@
+doctype html
+html(lang='th')
+    head
+        
+        block meta
+            meta(charset='utf-8')
+            meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        
+        block title
+            title= 'Jade Template Engine Tutorial by SiamHTML'
+        
+        block styles
+            link(href='/css/style.css', rel="stylesheet")
+    
+    body
+        include ../partials/header
+
+        block content
+
+        include ../partials/footer
+
+        block scripts
+            script(src='/js/jquery.js')

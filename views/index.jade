@@ -1,13 +1,17 @@
-h1 Hello Jade
- 
-p Lorem ipsum dolor sit amet, 
-  | consectetur adipiscing elit. 
-  | Integer nec odio. Praesent libero. 
-  | Sed cursus ante dapibus diam. Sed nisi. 
- 
-h2 สูตรคูณ
-ul
-  - for (var i = 2; i <= 12; i++)
-    - for (var j = 1; j <= 12; j++)
-      li #{i} x #{j} = #{i * j}
-    hr
+extends ../layouts/base
+include ../mixins/panel
+
+block title
+    title= 'Welcome to Jade Template Engine Tutorial by SiamHTML index.jade'
+
+    +panel('Header1 of panel', 'This is content of. panel')
+
+block content
+    h1= 'Jade Template Engine Tutorial by SiamHTML content index.jade'
+    if articles
+       ul
+            each val, index in articles
+                li
+                    a(href=val.href, target='_blank')= val.title
+    else
+        p='Not found.'

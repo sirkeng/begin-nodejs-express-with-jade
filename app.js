@@ -1,3 +1,4 @@
+// console.log('data: ', data);
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -12,7 +13,23 @@ app.set('view engine', 'jade');
 // req คือ request และ res คือ response
 // res.render('file') คือการให้ทำการ render ไฟล์ ที่อยู่ในโฟลเดอร์ views
 function getHomePage(req, res) {
-    res.render('index.jade');
+var data = {
+    'articles': [
+        {
+            'title': 'Article 1',
+            'href': 'articles/1.html'
+        }, 
+        {
+    	    'title': 'Article 2',
+           'href': 'articles/2.html'
+        }, 
+        {
+            'title': 'Article 3',
+            'href': 'articles/3.html'
+        }
+    ]
+};
+    res.render('index.jade', data);
 }
  
 // เมื่อ client เข้าถึงหน้า Home Page ของเว็บไซต์ http://localhost:5555/
