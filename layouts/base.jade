@@ -10,7 +10,9 @@ html(lang='th')
             title= 'Jade Template Engine Tutorial by SiamHTML'
         
         block styles
-            link(href='/css/style.css', rel="stylesheet")
+            <link type="text/css" href="/css/style.css" rel="stylesheet">
+            //- <link rel="stylesheet" href="/css/style.css">
+            //- link(href='/css/style.css', rel="stylesheet")
     
     body
         include ../partials/header

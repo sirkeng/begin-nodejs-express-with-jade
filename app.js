@@ -5,6 +5,7 @@ var app = express();
  
 // ประกาศให้ Express ใช้งาน View โดยให้ใช้โฟลเดอร์ views เป็นตัวเก็บไฟล์ jade.
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
  
 // ตั้งค่าให้ Express ใช้ View Engine ชื่อว่า Jade
 app.set('view engine', 'jade');
